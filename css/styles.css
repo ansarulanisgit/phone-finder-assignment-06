@@ -4,3 +4,12 @@
 body{
     font-family: 'Poppins', sans-serif;
 }
+
+.logo img{
+    max-width: 450px;
+}
+
+#spinner{
+    text-align: center;
+    display: none;
+}
