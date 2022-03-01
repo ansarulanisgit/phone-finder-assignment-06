@@ -59,7 +59,7 @@ const showPhoneDetails = phoneSlug =>{
                     <li><span>NFC: </span>${phone.others?.NFC}</li>
                     <li><span>Radio: </span>${phone.others?.Radio}</li>
                     <li><span>USB: </span>${phone.others?.USB}</li>
-                    <li><span>WLAN</span>${phone.others?.WLAN}</li>
+                    <li><span>WLAN: </span>${phone.others?.WLAN}</li>
                 </ul>
             </ul>`;        
     }
