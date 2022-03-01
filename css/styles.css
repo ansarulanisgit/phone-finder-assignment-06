@@ -38,7 +38,11 @@ span{
     border: 1px solid #0470d4;
     border-radius: 20px;
     transition: box-shadow 0.5s;
-    box-shadow: 0 0 5px 5px #0470d459;
+    box-shadow: 0 0 5px 3px #0470d459;
+}
+
+#phones div:hover{
+    box-shadow: 0 0 5px 6px #0470d459;
 }
 
 footer{
@@ -57,7 +61,7 @@ footer{
 }
 
 #search-submit{
-    padding: 7px 16px;
+    padding: 8px 16px;
     border: 0;
     background: #fff;
     margin: 5px 0;
@@ -98,13 +102,6 @@ footer{
 
 }
 
-
-
-
-
-
-
-
 /* Media Quaries */
 @media screen and (max-width: 1000px) {
     #phones{
@@ -120,14 +117,14 @@ footer{
 }
 @media screen and (max-width: 500px) {
     .logo img{
-        max-width: 250px;
+        max-width: 280px;
     }
     #phones{
         grid-template-columns: repeat(1,1fr);
     }
     #phones div{
         margin: 10px;
-        padding: 10px;
+        padding: 30px 20px;
     }
     .search-area{
         margin: 20px 5% 0;

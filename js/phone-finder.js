@@ -1,5 +1,4 @@
 // Essential functions
-
 const showingSpinner =()=>{
     const getSpinner = document.getElementById('spinner');
     getSpinner.style.display = "block";
@@ -19,9 +18,7 @@ const reset =()=>{
     getPhonesDiv.textContent = '';
     const getCounterSearch = document.getElementById('counter-search');
     getCounterSearch.innerHTML = `<p>Input brand name and click search to find phones<p>`;
-
 }
-
 
 //Show single phone details
 const showPhoneDetails = phoneSlug =>{
@@ -32,16 +29,7 @@ const showPhoneDetails = phoneSlug =>{
 
     const phoneDetails = phone =>{
         const modalHead = document.getElementById('exampleModalLabel');
-        modalHead.innerText =`Details of ${phone.name}`;
-        console.log(phone);
-        // const relaseDate =()=>{
-        //     if(phone.releaseDate.length<1){
-        //         return `${phone.relaseDate}`;
-        //     }
-        //     else{
-        //         return "No relase date found."
-        //     }
-        // }
+        modalHead.innerText =`Details of ${phone.name}`;        
         const modalBody = document.getElementById('modal-body');
         modalBody.innerHTML = `
             <img src="${phone.image}">
@@ -70,13 +58,11 @@ const showPhoneDetails = phoneSlug =>{
                     <li><span>USB: </span>${phone.others?.USB}</li>
                     <li><span>WLAN</span>${phone.others?.WLAN}</li>
                 </ul>
-            </ul>
-        `;
-        
+            </ul>`;        
     }
 }
 
-//Onclick funtion for showing result result from API
+//Onclick funtion for showing phones result from API
 const searchPhones =()=>{
     showingSpinner();
     const getSearchInput = document.getElementById('search-input');
@@ -85,7 +71,7 @@ const searchPhones =()=>{
     getSearchInput.value = '';
     const getCounterSearch = document.getElementById('counter-search');
     if(!isNaN(searchText)){
-        getCounterSearch.innerHTML = `<p>You didn't search for anything.</p>`;
+        getCounterSearch.innerHTML = `<p>You didn't search for anything. Please try again.</p>`;
         hidingSpinner();
         const getPhonesDiv = document.getElementById('phones');
         getPhonesDiv.textContent = '';
@@ -120,15 +106,11 @@ const searchPhones =()=>{
                 Show Details
                 </button>`;
                 getPhonesDiv.appendChild(phoneDiv);
-                                
             });
-            
         }
         getCounterSearch.innerHTML = `<p>You've searched for: <span>${getSearchValue}</span> <br> Result Found: <span>${counter}</span></p>
         <button id="reset" onclick="reset()">Reset</button>
         `;
         hidingSpinner();
-        
     }
-    
 }
