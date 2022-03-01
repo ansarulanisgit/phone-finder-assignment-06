@@ -1,4 +1,5 @@
 // Essential functions
+//Function for showing spinner and hiding phones div
 const showingSpinner =()=>{
     const getSpinner = document.getElementById('spinner');
     getSpinner.style.display = "block";
@@ -6,13 +7,14 @@ const showingSpinner =()=>{
     getPhonesArea.style.display ="none";
 }
 
+//Function for hiding spinner and showing phones div
 const hidingSpinner =()=>{
     const getSpinner = document.getElementById('spinner');
     getSpinner.style.display = "none";
     const getPhonesArea = document.getElementById('phones-area');
     getPhonesArea.style.display ="block";
 }
-
+//Fuction for reset data
 const reset =()=>{
     const getPhonesDiv = document.getElementById('phones');
     getPhonesDiv.textContent = '';
@@ -28,6 +30,7 @@ const showPhoneDetails = phoneSlug =>{
     .then(phone => phoneDetails(phone.data));
 
     const phoneDetails = phone =>{
+        //Adding dynamic data to modal to show single phone data
         const modalHead = document.getElementById('exampleModalLabel');
         modalHead.innerText =`Details of ${phone.name}`;        
         const modalBody = document.getElementById('modal-body');
@@ -70,6 +73,7 @@ const searchPhones =()=>{
     const searchText = getSearchValue.toLowerCase();
     getSearchInput.value = '';
     const getCounterSearch = document.getElementById('counter-search');
+    //Input data validating
     if(!isNaN(searchText)){
         getCounterSearch.innerHTML = `<p>You didn't search for anything. Please try again.</p>`;
         hidingSpinner();
@@ -97,6 +101,7 @@ const searchPhones =()=>{
                 counter ++;
                 const phoneDiv = document.createElement('div');
                 phoneDiv.classList.add('phone');
+                //Adding dynamic text to phone card div
                 phoneDiv.innerHTML = `
                 <p class="phone-counter">${counter}</p>
                 <img src="${phone.image}">
