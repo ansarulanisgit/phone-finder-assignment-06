@@ -15,7 +15,7 @@
     <header>
         <!-- Logo part -->
         <div class="logo text-center">
-            <img src="images/phone-master-logo.png" alt="Logo">
+            <a href="index.html"><img src="images/phone-master-logo.png" alt="Logo"></a>
         </div>
     </header>
 
@@ -24,8 +24,8 @@
         <div class="container">
             <!-- Search Area  -->
             <div class="search-area text-center">
-                <input id="search-input" type="text" placeholder="Input phone name or brand">
-                <button id="search-btn">Search</button>
+                <input id="search-input" type="text" placeholder="Brand Name...">
+                <button id="search-submit" onclick="searchPhones()">Search</button>
             </div>
             <!-- Loading Spinner part -->
             <div id="spinner">
@@ -33,17 +33,36 @@
                 <h5>Please wait, data is loading...</h5>
             </div>
             <!-- Phone and Search Result Display part -->
-            <div class="phones-area">
-                <h5 id="counter-search" class="text-center py-3">Counter and Search</h5>
-                <div id="phones"></div>
+            <div id="phones-area" style="min-height: 200px;">
+                <div id="counter-search" class="text-center py-3">
+                    <p>Input brand name and click search to find phones</p>
+                </div>
+                <div id="phones" class="text-center mb-5"></div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title text-primary text-center" id="exampleModalLabel">Phone Name</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div id="modal-body" class="modal-body">
+                        Phone Details
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+                </div>
             </div>
     
         </div>
     </main>
 
     <!-- Footer part -->
-    <footer>
-        <h5 class="text-center">Developed with love by Ansarul Anis</h5>
+    <footer class="py-2 bg-primary text-light text-center">
+        <h6>Developed with love by Ansarul Anis</h6>
     </footer>
     <!-- Script File links -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
