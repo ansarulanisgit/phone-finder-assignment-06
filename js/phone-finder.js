@@ -49,11 +49,11 @@ const showPhoneDetails = phoneSlug =>{
                 <li><span>Memory:</span> ${phone.mainFeatures.memory}</li>
                 <li><span>Sensors:</li>
                 <ul>
-                    <li>${phone.mainFeatures?.sensors[0]}</li>
-                    <li>${phone.mainFeatures?.sensors[1]}</li>
-                    <li>${phone.mainFeatures?.sensors[2]}</li>
-                    <li>${phone.mainFeatures?.sensors[3]}</li>
-                    <li>${phone.mainFeatures?.sensors[4]}</li>
+                    <li>${phone.mainFeatures?.sensors[0] ?? "None"}</li>
+                    <li>${phone.mainFeatures?.sensors[1] ?? "None"}</li>
+                    <li>${phone.mainFeatures?.sensors[2] ?? "None"}</li>
+                    <li>${phone.mainFeatures?.sensors[3] ?? "None"}</li>
+                    <li>${phone.mainFeatures?.sensors[4] ?? "None"}</li>
                 </ul>
                 <li><span>Storage:</span> ${phone.mainFeatures.storage}</li>
                 <li><span>Others:</li>
