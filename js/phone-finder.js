@@ -30,14 +30,18 @@ const showPhoneDetails = phoneSlug =>{
     .then(phone => phoneDetails(phone.data));
 
     const phoneDetails = phone =>{
+        //console.log(phone);
         //Adding dynamic data to modal to show single phone data
         const modalHead = document.getElementById('exampleModalLabel');
         modalHead.innerText =`Details of ${phone.name}`;        
         const modalBody = document.getElementById('modal-body');
+        if(phone.releaseDate.length <1){
+            phone.releaseDate ="No date found";
+        } 
         modalBody.innerHTML = `
             <img src="${phone.image}">
             <h5><span>Brand:</span> ${phone.brand}</h5>
-            <h5><span>Release Date:</span> ${phone?.releaseDate ?? 'No Relasse date found'}</h5>
+            <h5><span>Release Date:</span> ${phone.releaseDate}</h5>
             <h5><span>Main Features:</span></h5>
             <ul>
                 <li><span>ChipSet:</span> ${phone.mainFeatures.chipSet}</li>
@@ -54,12 +58,12 @@ const showPhoneDetails = phoneSlug =>{
                 <li><span>Storage:</span> ${phone.mainFeatures.storage}</li>
                 <li><span>Others:</li>
                 <ul>
-                    <li><span>Bluetooth: </span>${phone.others?.Bluetooth}</li>
-                    <li><span>GPS: </span>${phone.others?.GPS}</li>
-                    <li><span>NFC: </span>${phone.others?.NFC}</li>
-                    <li><span>Radio: </span>${phone.others?.Radio}</li>
-                    <li><span>USB: </span>${phone.others?.USB}</li>
-                    <li><span>WLAN: </span>${phone.others?.WLAN}</li>
+                    <li><span>Bluetooth: </span>${phone?.Bluetooth ?? "No data"}</li>
+                    <li><span>GPS: </span>${phone.others?.GPS ?? "No data"}</li>
+                    <li><span>NFC: </span>${phone.others?.NFC ?? "No data"}</li>
+                    <li><span>Radio: </span>${phone.others?.Radio ?? "No data"}</li>
+                    <li><span>USB: </span>${phone.others?.USB ?? "No data"}</li>
+                    <li><span>WLAN: </span>${phone.others?.WLAN ?? "No data"}</li>
                 </ul>
             </ul>`;        
     }
