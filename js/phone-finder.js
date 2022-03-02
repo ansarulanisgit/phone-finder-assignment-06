@@ -39,14 +39,14 @@ const showPhoneDetails = phoneSlug =>{
             phone.releaseDate ="No date found";
         } 
         modalBody.innerHTML = `
-            <img src="${phone.image}">
-            <h5><span>Brand:</span> ${phone.brand}</h5>
+            <img src="${phone?.image ?? "No Data"}">
+            <h5><span>Brand:</span> ${phone?.brand ?? "No Data"}</h5>
             <h5><span>Release Date:</span> ${phone.releaseDate}</h5>
             <h5><span>Main Features:</span></h5>
             <ul>
-                <li><span>ChipSet:</span> ${phone.mainFeatures.chipSet}</li>
-                <li><span>Display Size:</span> ${phone.mainFeatures.displaySize}</li>
-                <li><span>Memory:</span> ${phone.mainFeatures.memory}</li>
+                <li><span>ChipSet:</span> ${phone.mainFeatures?.chipSet ?? "No Data"}</li>
+                <li><span>Display Size:</span> ${phone.mainFeatures?.displaySize ?? "No Data"}</li>
+                <li><span>Memory:</span> ${phone.mainFeatures?.memory ?? "No Data"}</li>
                 <li><span>Sensors:</li>
                 <ul>
                     <li>${phone.mainFeatures?.sensors[0] ?? "None"}</li>
@@ -55,7 +55,7 @@ const showPhoneDetails = phoneSlug =>{
                     <li>${phone.mainFeatures?.sensors[3] ?? "None"}</li>
                     <li>${phone.mainFeatures?.sensors[4] ?? "None"}</li>
                 </ul>
-                <li><span>Storage:</span> ${phone.mainFeatures.storage}</li>
+                <li><span>Storage:</span> ${phone.mainFeatures?.storage ?? "No Data"}</li>
                 <li><span>Others:</li>
                 <ul>
                     <li><span>Bluetooth: </span>${phone?.Bluetooth ?? "No data"}</li>
