@@ -99,18 +99,20 @@ const searchPhones =()=>{
         else{
             phones.forEach(phone => {
                 counter ++;
-                const phoneDiv = document.createElement('div');
-                phoneDiv.classList.add('phone');
-                //Adding dynamic text to phone card div
-                phoneDiv.innerHTML = `
-                <p class="phone-counter">${counter}</p>
-                <img src="${phone.image}">
-                <h4 class="my-2">${phone.phone_name}</h4>
-                <!-- Button trigger modal -->
-                <button onclick="showPhoneDetails('${phone.slug}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Show Details
-                </button>`;
-                getPhonesDiv.appendChild(phoneDiv);
+                if(counter<=20){
+                    const phoneDiv = document.createElement('div');
+                    phoneDiv.classList.add('phone');
+                    //Adding dynamic text to phone card div
+                    phoneDiv.innerHTML = `
+                    <p class="phone-counter">${counter}</p>
+                    <img src="${phone.image}">
+                    <h4 class="my-2">${phone.phone_name}</h4>
+                    <!-- Button trigger modal -->
+                    <button onclick="showPhoneDetails('${phone.slug}')" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Show Details
+                    </button>`;
+                    getPhonesDiv.appendChild(phoneDiv);
+                }
             });
         }
         getCounterSearch.innerHTML = `<p>You've searched for: <span>${getSearchValue}</span> <br> Result Found: <span>${counter}</span></p>
